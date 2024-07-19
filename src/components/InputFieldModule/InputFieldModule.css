@@ -1,0 +1,29 @@
+.inputModule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 337px;
+  height: 67px;
+  padding: 22px 27px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 16px rgba(11, 31, 81, 0.05);
+  border-radius: 28px;
+}
+
+.inputModule input {
+  height: 50px;
+  width: 100%;
+  background: none;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 128%;
+  color: #b1aeae;
+}
+
+.inputModule:hover {
+  border: 2px solid #6655d5;
+}
+
+.inputModule input:hover {
+  color: #6655d5;
+}
