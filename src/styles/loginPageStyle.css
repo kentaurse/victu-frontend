@@ -8,14 +8,19 @@
 
 .login-content {
   max-width: 340px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.login-logo{
+  display: flex;
+  margin-top: 50px;
+  margin-left: -20px;
+}
+
 .login-image {
-  margin-top: 90px;
+  margin-top: 50px;
   margin-bottom: 35.5px;
 }
 
@@ -45,7 +50,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 160px;
+  margin-bottom: 80px;
 }
 
 .login-inputs {
