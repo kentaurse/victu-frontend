@@ -1,0 +1,27 @@
+.program {
+  background: #474ccb;
+  box-shadow: 0px 0px 33px -3px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  padding: 23px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  
+}
+
+.program-name {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 14px;
+}
+
+.program-subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 128%;
+}
+
+.program-create{
+    margin-right: 25px;
+}
