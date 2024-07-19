@@ -4,9 +4,8 @@
   border-radius: 30px;
   padding: 23px;
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
   align-items: center;
-  
 }
 
 .program-name {
@@ -23,5 +22,6 @@
 }
 
 .program-create{
-    margin-right: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
 }

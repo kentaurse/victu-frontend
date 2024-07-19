@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./InputFieldModule.css";
 
-const InputFieldModule = ({ image, placeholder, type }) => {
+const InputFieldModule = (props) => {
   const [clicked, setClicked] = useState(false);
 
   function setIconColor() {
@@ -18,21 +18,19 @@ const InputFieldModule = ({ image, placeholder, type }) => {
       onClick={setIconColor}
       onMouseLeave={removeIconColor}
     >
-      <img
-        src={image}
-        alt="login"
-        style={{
-          filter: clicked
-            ? "invert(41%) sepia(50%) saturate(933%) hue-rotate(211deg) brightness(84%) contrast(100%)"
-            : "none",
-        }}
-      />
-      <input
-        type={type}
-        placeholder={placeholder}
-        onClick={setIconColor}
-        onMouseLeave={removeIconColor}
-      />
+      {props?.image && (
+        <img
+          src={props.image}
+          alt="login"
+          style={{
+            filter: clicked
+              ? "invert(41%) sepia(50%) saturate(933%) hue-rotate(211deg) brightness(84%) contrast(100%)"
+              : "none",
+          }}
+        />
+      )}
+
+      <input {...props} />
     </div>
   );
 };

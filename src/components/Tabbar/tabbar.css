@@ -2,12 +2,12 @@
   background: linear-gradient(
     4.27deg,
     rgba(11, 31, 81, 0.89) 3.14%,
-    rgba(84, 81, 214, 0.92) 154.22%
+    rgba(84, 81, 214, 1) 154.22%
   );
   width: 100%;
   position: fixed;
   display: flex;
-  bottom: 0;
+  bottom: -2px;
   justify-content: center;
   align-items: center;
   gap: 60px;

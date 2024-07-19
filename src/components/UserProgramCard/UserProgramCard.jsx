@@ -1,17 +1,15 @@
 import React from "react";
-import './userProgramCardStyle.css'
-import CreateNewProgramIcon from "../../assets/createNewProgramIcon.svg";
+import "./userProgramCardStyle.css";
+import useFetchUserProgram from "../hooks/useFetchUserProgram";
+import ExistingProgram from "./ExistingProgram";
+import NoProgram from "./NoProgram";
 
 const UserProgramCard = () => {
+  const userProgramData = useFetchUserProgram();
+
   return (
-    <div className="program">
-      <div className="program-title">
-        <div className="program-name">No diet program has been created</div>
-        <div className="program-subtitle">Create your own program</div>
-      </div>
-      <div className="program-create">
-        <img src={CreateNewProgramIcon} alt="create" />
-      </div>
+    <div>
+      {userProgramData ? <ExistingProgram dietProgram={userProgramData?.userDietProgram} /> : <NoProgram />}
     </div>
   );
 };

@@ -5,31 +5,24 @@ import Tabbar from "../components/Tabbar/Tabbar";
 import UserExercisesCard from "../components/UserExercisesCard/UserExercisesCard";
 import UserMealsCard from "../components/UserMealsCard/UserMealsCard";
 import UserProgramCard from "../components/UserProgramCard/UserProgramCard";
-import HomeAvatar from "../assets/avatarHome.png";
+import useFetchUserData from "../components/hooks/useFetchUserData";
+import HomeHeader from "../components/HomeHeader/HomeHeader";
 
 const HomePage = () => {
+  const userFetchedData = useFetchUserData();
+
   return (
     <div className="home">
       <div className="home-content">
-        <div className="home-logo">
-          <img src={Logo} alt="logo" />
-        </div>
-        <div className="home-header">
-          <div className="home-title">
-            <div className="home-username">Hi Klare</div>
-            <div className="home-subtitle">
-              Have a productive and joyous day
-            </div>
-          </div>
-          <div className="home-avatar">
-            <img src={HomeAvatar} alt="avatar" />
-          </div>
-        </div>
+        <HomeHeader
+          userName={userFetchedData?.userFirstName}
+          userAvatar={userFetchedData?.userAvatar}
+        />
         <UserProgramCard />
         <UserExercisesCard />
         <UserMealsCard />
       </div>
-      <Tabbar />
+      <Tabbar currentPage={"home"} />
     </div>
   );
 };

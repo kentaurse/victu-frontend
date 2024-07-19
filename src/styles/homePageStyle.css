@@ -16,9 +16,34 @@
 .home-header {
   display: flex;
   align-items: center;
-  gap: 35px;
+  justify-content: space-between;
   padding: 0px 23px;
+  margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.home-avatar {
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--cyan);
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.handledAvatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 14px 18px;
+  border-radius: 50%;
+  margin-left: 10px;
+  border: 2px solid var(--cyan);
 }
 
 .home-logo {
@@ -39,14 +64,14 @@
   line-height: 128.4%;
 }
 
-.program{
+.program {
   margin-bottom: 16px;
 }
 
-.meal{
+.meal {
   margin-bottom: 140px;
 }
 
-.move{
+.move {
   margin-bottom: 16px;
 }
