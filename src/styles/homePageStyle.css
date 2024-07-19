@@ -1,0 +1,52 @@
+.home {
+  width: 100%;
+  min-height: 100%;
+  background: url("../assets/homeBGImage.png"),
+    linear-gradient(348.29deg, #3b31a5 0%, #7066df 98.25%);
+}
+
+.home-content {
+  max-width: 362px;
+  color: var(--light-blue);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-header {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding: 0px 23px;
+  margin-bottom: 30px;
+}
+
+.home-logo {
+  padding: 0px 23px;
+  margin-top: 30px;
+  margin-bottom: 7.5px;
+}
+
+.home-username {
+  font-weight: 700;
+  font-size: 43px;
+  line-height: 128%;
+}
+
+.home-subtitle {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 128.4%;
+}
+
+.program{
+  margin-bottom: 16px;
+}
+
+.meal{
+  margin-bottom: 140px;
+}
+
+.move{
+  margin-bottom: 16px;
+}
