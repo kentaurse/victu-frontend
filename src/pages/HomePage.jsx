@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/homePageStyle.css";
-import Logo from "../assets/fullLogoGrey.svg";
 import Tabbar from "../components/Tabbar/Tabbar";
 import UserExercisesCard from "../components/UserExercisesCard/UserExercisesCard";
 import UserMealsCard from "../components/UserMealsCard/UserMealsCard";
