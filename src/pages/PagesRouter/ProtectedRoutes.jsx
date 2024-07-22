@@ -7,9 +7,9 @@ const ProtectedRoutes = () => {
 
   useEffect(() => {
     const userAuthLocalData =
-      JSON.parse(localStorage.getItem("userAuthData ")) || {};
+      JSON.parse(localStorage.getItem("userAuthData")) || {};
     setIsAuth(userAuthLocalData?.isAuth);
-  }, []);
+  }, [isAuth]);
 
   return isAuth ? <Outlet /> : <StartingPage />;
 };
