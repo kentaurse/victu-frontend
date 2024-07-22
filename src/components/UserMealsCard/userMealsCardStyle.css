@@ -2,7 +2,7 @@
   background: #474ccb;
   box-shadow: 0px 0px 33px -3px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
-  padding: 23px;
+  padding: 26px;
 }
 
 .meal-title {
@@ -15,6 +15,10 @@
 .meal-list {
   display: flex;
   gap: 10px;
+}
+
+.meal-card:last-child {
+  overflow: hidden;
 }
 
 .meal-img {
@@ -32,7 +36,7 @@
 }
 
 .meal-card-subtitle {
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 128%;
-  }
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 128%;
+}

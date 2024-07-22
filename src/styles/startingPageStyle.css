@@ -7,8 +7,8 @@
 }
 
 .starting-image {
-  margin-top: 8.2rem;
-  margin-bottom: 88px;
+  margin-top: 60px;
+  margin-bottom: 70px;
 }
 
 .starting-image img {
@@ -17,12 +17,12 @@
 }
 
 .starting-main {
-  margin-left: 2.875rem;
+  padding: 0 2.7rem;
 }
 
 .starting-title {
   font-weight: 700;
-  font-size: 43px;
+  font-size: 30px;
   line-height: 128%;
   color: var(--dark-blue);
   margin-bottom: 20px;
@@ -31,43 +31,43 @@
 .starting-subtitle {
   max-width: 294px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
-  margin-bottom: 85px;
+  margin-bottom: 60px;
 }
 
 .starting-button {
   display: flex;
   gap: 24px;
-  width: 220px;
+  width: 210px;
   align-items: center;
   background: var(--light-purple);
   box-shadow: 0px 0px 16px rgba(11, 31, 81, 0.15);
   border-radius: 1.75rem;
-  padding: 17px 32px;
+  padding: 15px 32px;
+  margin-bottom: 30px;
 }
 
 .starting-button p {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 128%;
   color: var(--light-blue);
 }
 
-
-@media(max-width:375px){
-  .starting-image{
+@media (max-width: 375px) {
+  .starting-image {
     margin-top: 30px;
     margin-bottom: 50px;
   }
 
-  .starting-title{
-    max-width:250px;
+  .starting-title {
+    max-width: 250px;
     font-size: 35px;
     margin-bottom: 10px;
   }
 
-  .starting-subtitle{
+  .starting-subtitle {
     font-size: 15px;
     margin-bottom: 50px;
   }

@@ -15,35 +15,47 @@ const Tabbar = ({ currentPage }) => {
           alt="home"
           style={{
             filter:
-              currentPage === "home" ?
-              "invert(73%) sepia(48%) saturate(3259%) hue-rotate(160deg) brightness(160%) contrast(70%)"
-              : "none",
+              currentPage === "home"
+                ? "invert(73%) sepia(48%) saturate(3400%) hue-rotate(160deg) brightness(700%) contrast(80%)"
+                : "none",
           }}
         />
       </Link>
       <div className="tabbar-activities">
-        <img src={ActivitiesIcon} alt="activities" style={{
+        <img
+          src={ActivitiesIcon}
+          alt="activities"
+          style={{
             filter:
-              currentPage === "activities" ?
-              "invert(73%) sepia(48%) saturate(3259%) hue-rotate(160deg) brightness(160%) contrast(70%)"
-              : "none",
-          }}/>
+              currentPage === "activities"
+                ? "invert(73%) sepia(48%) saturate(3400%) hue-rotate(160deg) brightness(700%) contrast(80%)"
+                : "none",
+          }}
+        />
       </div>
       <div className="tabbar-notification">
-        <img src={NotifIcon} alt="notifications" style={{
+        <img
+          src={NotifIcon}
+          alt="notifications"
+          style={{
             filter:
-              currentPage === "notifications" ?
-              "invert(73%) sepia(48%) saturate(3259%) hue-rotate(160deg) brightness(160%) contrast(70%)"
-              : "none",
-          }} />
+              currentPage === "notifications"
+                ? "invert(73%) sepia(48%) saturate(3400%) hue-rotate(160deg) brightness(700%) contrast(80%)"
+                : "none",
+          }}
+        />
       </div>
       <Link to="/profile" className="tabbar-profile">
-        <img src={ProfileIcon} alt="profile"  style={{
+        <img
+          src={ProfileIcon}
+          alt="profile"
+          style={{
             filter:
-              currentPage === "profile" ?
-              "invert(73%) sepia(48%) saturate(3259%) hue-rotate(160deg) brightness(160%) contrast(70%)"
-              : "none",
-          }} />
+              currentPage === "profile"
+                ? "invert(73%) sepia(48%) saturate(3400%) hue-rotate(160deg) brightness(700%) contrast(80%)"
+                : "none",
+          }}
+        />
       </Link>
     </div>
   );
