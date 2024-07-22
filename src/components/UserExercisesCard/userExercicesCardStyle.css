@@ -2,7 +2,7 @@
   background: #474ccb;
   box-shadow: 0px 0px 33px -3px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
-  padding: 23px;
+  padding: 26px;
 }
 
 .move-title {
@@ -15,6 +15,10 @@
 .move-videos-list {
   display: flex;
   gap: 10px;
+}
+
+.move-video:last-child {
+  overflow: hidden;
 }
 
 .video {
