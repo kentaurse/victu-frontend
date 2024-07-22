@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const HomeHeader = ({ userName, userAvatar }) => {
   const [handledAvatar, setHandledAvatar] = useState();
@@ -15,10 +16,14 @@ const HomeHeader = ({ userName, userAvatar }) => {
         <div className="home-subtitle">Have a productive and joyous day</div>
       </div>
       {userAvatar ? (
-          <img src={userAvatar} alt="avatar" className="home-avatar"/>
-        ) : (
-          <div className="handledAvatar">{handledAvatar || ""}</div>
-        )}
+        <Link to="/profile">
+          <img src={userAvatar} alt="avatar" className="home-avatar" />
+        </Link>
+      ) : (
+        <Link to="/profile" className="handledAvatar">
+          {handledAvatar || ""}
+        </Link>
+      )}
     </div>
   );
 };
