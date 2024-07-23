@@ -1,0 +1,47 @@
+.notif {
+  width: 100%;
+  min-height: 100%;
+  background: url("../assets/notifPageBG.png") no-repeat bottom left,
+    linear-gradient(348.29deg, #3b31a5 0%, #7066df 98.25%);
+}
+
+.notif-content {
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.notif-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 128%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  color: var(--light-blue);
+}
+
+.notif-filter {
+  width: 100%;
+  position: fixed;
+  bottom: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+}
+
+.notif-filter-btn {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 128%;
+  color: var(--dark-blue);
+  padding: 8px 20px;
+  border-radius: 10px;
+  background: rgba(209, 209, 209, 0.5);;
+}
+
+.notif-active-btn{
+  background: #21D1FF;
+}
