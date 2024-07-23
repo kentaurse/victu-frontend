@@ -1,0 +1,40 @@
+.activity-needs-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 128%;
+  margin-bottom: 15px;
+  margin-left: 25px;
+}
+
+.activity-card {
+  width: 100%;
+  padding: 25px 25px;
+  background: #474ccb;
+  box-shadow: 0px 0px 33px -3px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.activity-card-title {
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 128%;
+  margin-bottom: 10px;
+}
+
+.activity-card-subtitle {
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--cyan);
+}
+
+.activity-needs-two-blocks {
+  display: flex;
+  gap: 13px;
+  margin-bottom: 13px;
+}
