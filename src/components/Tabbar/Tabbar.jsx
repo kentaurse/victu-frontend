@@ -33,7 +33,7 @@ const Tabbar = ({ currentPage }) => {
           }}
         />
       </div>
-      <div className="tabbar-notification">
+      <Link to="/notifications" className="tabbar-notification">
         <img
           src={NotifIcon}
           alt="notifications"
@@ -44,7 +44,7 @@ const Tabbar = ({ currentPage }) => {
                 : "none",
           }}
         />
-      </div>
+      </Link>
       <Link to="/profile" className="tabbar-profile">
         <img
           src={ProfileIcon}

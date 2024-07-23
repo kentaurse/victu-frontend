@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import CreateNewProgramPage from "../CreateNewProgramPage";
 import HomePage from "../HomePage";
 import LoginPage from "../LoginPage";
+import NotificationsPage from "../NotificationsPage";
 import ProfilePage from "../ProfilePage";
 import RegistrationPage from "../RegistrationPage";
 import StartingPage from "../StartingPage";
@@ -15,6 +16,7 @@ const PagesRouter = () => {
         <Route path="/home" element={<HomePage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/create-new-program" element={<CreateNewProgramPage />} />
+        <Route path="/notifications" element={<NotificationsPage />} />
       </Route>
       <Route path="/" element={<StartingPage />} />
       <Route path="/login" element={<LoginPage />} />
