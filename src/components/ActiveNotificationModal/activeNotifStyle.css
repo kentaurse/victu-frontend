@@ -1,0 +1,63 @@
+.activeNotif {
+  display: none;
+}
+
+.activeNotif-show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(11, 7, 61, 0.6);
+  padding: 30px;
+}
+
+.activeNotif-content {
+  max-width: 390px;
+  padding: 27px;
+  background-color: var(--light-blue);
+  border-radius: 28px;
+  color: var(--dark-blue);
+}
+
+.activeNotif-title {
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.activeNotif-info {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 128%;
+  margin-bottom: 50px;
+}
+
+.activeNotif-close {
+  display: flex;
+  justify-content: center;
+}
+
+.activeNotif-close button {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--dark-blue);
+  background: none;
+  padding: 8px 30px;
+  border: 2px solid var(--dark-blue);
+  border-radius: 10px;
+  transition: all 0.4s ease-in;
+}
+
+.activeNotif-close button:hover {
+  background-color: var(--dark-blue);
+  color: var(--light-blue);
+}
+
+.activeNotif-close button:active {
+  background-color: var(--dark-blue);
+  color: var(--light-blue);
+}

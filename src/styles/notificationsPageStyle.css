@@ -6,6 +6,8 @@
 }
 
 .notif-content {
+  max-width:390px;
+  margin: 0 auto;
   padding: 0 30px;
   display: flex;
   flex-direction: column;
@@ -20,28 +22,4 @@
   margin-top: 50px;
   margin-bottom: 30px;
   color: var(--light-blue);
-}
-
-.notif-filter {
-  width: 100%;
-  position: fixed;
-  bottom: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 17px;
-}
-
-.notif-filter-btn {
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 128%;
-  color: var(--dark-blue);
-  padding: 8px 20px;
-  border-radius: 10px;
-  background: rgba(209, 209, 209, 0.5);;
-}
-
-.notif-active-btn{
-  background: #21D1FF;
 }
