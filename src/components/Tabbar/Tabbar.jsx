@@ -21,7 +21,7 @@ const Tabbar = ({ currentPage }) => {
           }}
         />
       </Link>
-      <div className="tabbar-activities">
+      <Link to="/activities" className="tabbar-activities">
         <img
           src={ActivitiesIcon}
           alt="activities"
@@ -32,7 +32,7 @@ const Tabbar = ({ currentPage }) => {
                 : "none",
           }}
         />
-      </div>
+      </Link>
       <Link to="/notifications" className="tabbar-notification">
         <img
           src={NotifIcon}

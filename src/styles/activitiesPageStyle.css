@@ -1,0 +1,27 @@
+.activity {
+  width: 100%;
+  min-height: 100%;
+  background: url("../assets/ActivitiesPageBG.png") no-repeat right,
+    linear-gradient(348.29deg, #3b31a5 0%, #7066df 98.25%);
+  display: flex;
+}
+
+.activity-content {
+  max-width: 360px;
+  margin: 0 auto;
+  color: var(--light-blue);
+}
+
+.activity-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 128%;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.activity-needs {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

@@ -1,0 +1,23 @@
+.activity-tips-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 128%;
+  margin-left: 25px;
+  margin-bottom: 15px;
+}
+
+.activity-tips-card {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: #474ccb;
+  box-shadow: 0px 0px 33px -3px rgba(0, 0, 0, 0.15);
+  border-radius: 23px;
+  padding: 25px 35px;
+}
+
+.activity-tips-tip {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 128%;
+}
