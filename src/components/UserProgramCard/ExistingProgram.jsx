@@ -33,7 +33,7 @@ const ExistingProgram = ({ dietProgram }) => {
         <div className="program-subtitle">You can adjust your diet program </div>
       </div>
 
-      <Link to="/create-new-program" className="program-create">
+      <Link to="/adjust-program" className="adjust-create">
         <img src={AdjustIcon} alt="adjust" />
       </Link>
     </div>
