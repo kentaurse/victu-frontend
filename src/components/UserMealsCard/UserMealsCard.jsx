@@ -1,31 +1,22 @@
 import React from "react";
 import "./userMealsCardStyle.css";
-import MoveVideoMock from "../../assets/moveVideoJean.png";
+import image1 from "../../assets/testPhoto.jpeg";
+import Carousel from "../Carousel/Carousel";
 
 const UserMealsCard = () => {
+  const mockData = [
+    { id: 1, image: image1, title: "Workout with Jane", subtitle: "25 mins" },
+    { id: 2, image: image1, title: "Workout with Jane", subtitle: "25 mins" },
+    { id: 3, image: image1, title: "Workout with Jane", subtitle: "25 mins" },
+    { id: 4, image: image1, title: "Workout with Jane", subtitle: "25 mins" },
+    { id: 5, image: image1, title: "Workout with Jane", subtitle: "25 mins" },
+    { id: 6, image: image1, title: "Workout with Jane", subtitle: "25 mins" },
+  ];
+
   return (
     <div className="meal">
       <div className="meal-title">Meals</div>
-      <div className="meal-list">
-        <div className="meal-card">
-          <div className="meal-img">
-            <img src={MoveVideoMock} alt="video" />
-          </div>
-          <div className="meal-card-info">
-            <div className="meal-card-title">Workout with Jane</div>
-            <div className="meal-card-subtitle">25 mins</div>
-          </div>
-        </div>
-        <div className="meal-card">
-          <div className="meal-img">
-            <img src={MoveVideoMock} alt="video" />
-          </div>
-          <div className="meal-card-info">
-            <div className="meal-card-title">Workout with Jane</div>
-            <div className="meal-card-subtitle">25 mins</div>
-          </div>
-        </div>
-      </div>
+      <Carousel contentData={mockData} />
     </div>
   );
 };

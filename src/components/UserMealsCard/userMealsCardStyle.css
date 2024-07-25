@@ -11,32 +11,3 @@
   line-height: 128%;
   margin-bottom: 16px;
 }
-
-.meal-list {
-  display: flex;
-  gap: 10px;
-}
-
-.meal-card:last-child {
-  overflow: hidden;
-}
-
-.meal-img {
-  margin-bottom: 7px;
-}
-
-.meal-card-info {
-  padding: 0 8px;
-}
-
-.meal-card-title {
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 128%;
-}
-
-.meal-card-subtitle {
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 128%;
-}
