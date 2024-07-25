@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import ActivitiesPage from "../ActivitiesPage";
+import AdjustExistingProgram from "../AdjustExistingProgram";
 import CreateNewProgramPage from "../CreateNewProgramPage";
 import HomePage from "../HomePage";
 import LoginPage from "../LoginPage";
@@ -19,6 +20,7 @@ const PagesRouter = () => {
         <Route path="/create-new-program" element={<CreateNewProgramPage />} />
         <Route path="/notifications" element={<NotificationsPage />} />
         <Route path="/activities" element={<ActivitiesPage />} />
+        <Route path="/adjust-program" element={<AdjustExistingProgram />} />
       </Route>
       <Route path="/" element={<StartingPage />} />
       <Route path="/login" element={<LoginPage />} />
