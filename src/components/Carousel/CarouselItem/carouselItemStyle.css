@@ -1,0 +1,25 @@
+.carousel-content-video {
+  margin-bottom: 4px;
+}
+
+.carousel-content-video iframe {
+  width: 210px;
+  max-height: 117.5px;
+  border-radius: 15px;
+}
+
+.carousel-content-info {
+  padding: 0 8px;
+}
+
+.carousel-content-title {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 128%;
+}
+
+.carousel-content-subtitle {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 128%;
+}

@@ -11,32 +11,3 @@
   line-height: 128%;
   margin-bottom: 16px;
 }
-
-.move-videos-list {
-  display: flex;
-  gap: 10px;
-}
-
-.move-video:last-child {
-  overflow: hidden;
-}
-
-.video {
-  margin-bottom: 7px;
-}
-
-.move-video-info {
-  padding: 0 8px;
-}
-
-.move-video-title {
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 128%;
-}
-
-.move-video-subtitle {
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 128%;
-}
