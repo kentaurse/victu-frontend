@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import CarouselItem from "./CarouselItem/CarouselItem";
 import "./carouselStyle.css";
+import CarouselItem from "./CarouselItem/CarouselItem";
 
 const Carousel = ({ contentData }) => {
   const [width, setWidth] = useState(0);

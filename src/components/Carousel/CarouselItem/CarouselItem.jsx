@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import "./carouselItemStyle.css";
 
 const CarouselItem = ({ content }) => {
-  const src = `https://www.youtube.com/embed/${content?.moveVideoId}?controls=1`;
+  const src = `https://www.youtube.com/embed/${content?.videoId}?controls=1`;
 
   return (
     <motion.div className="carousel-item">
@@ -18,8 +18,8 @@ const CarouselItem = ({ content }) => {
       </div>
 
       <div className="carousel-content-info">
-        <div className="carousel-content-title">{content?.moveTitle}</div>
-        <div className="carousel-content-subtitle">{content?.moveSubtitle}</div>
+        <div className="carousel-content-title">{content?.title}</div>
+        <div className="carousel-content-subtitle">{content?.subtitle}</div>
       </div>
     </motion.div>
   );
