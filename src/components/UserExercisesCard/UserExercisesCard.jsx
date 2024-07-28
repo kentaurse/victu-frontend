@@ -1,7 +1,7 @@
 import React from "react";
 import "./userExercicesCardStyle.css";
-import Carousel from "../Carousel/Carousel";
 import useFetchMoveVideos from "../hooks/useFetchMoveVideos";
+import Carousel from "../Carousel/Carousel";
 
 const UserExercisesCard = () => {
   const moveData = useFetchMoveVideos();
