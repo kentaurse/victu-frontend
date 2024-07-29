@@ -1,0 +1,34 @@
+.admin {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--light-blue);
+}
+
+.admin-content {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--dark-blue);
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+.admin-meals{
+  margin-bottom: 30px;
+}
+
+.admin-move{
+  margin-bottom: 30px;
+}
+
+.admin-notif{
+  margin-bottom: 50px;
+}

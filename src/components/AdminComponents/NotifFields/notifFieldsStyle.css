@@ -1,0 +1,40 @@
+.admin-notif {
+  padding: 23px;
+  background-color: var(--dark-blue);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin-notif-title {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--light-blue);
+  margin-bottom: 20px;
+}
+
+.admin-notif input {
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 13px;
+  color: var(--dark-blue);
+  background-color: var(--light-blue);
+}
+
+.admin-notif button {
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid var(--light-blue);
+  background: none;
+  color: var(--light-blue);
+  transition: all 0.5s ease;
+}
+
+.admin-notif button:hover {
+  color: var(--dark-blue);
+  background: var(--light-blue);
+}
