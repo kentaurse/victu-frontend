@@ -10,6 +10,7 @@ import NotificationsPage from "../NotificationsPage";
 import ProfilePage from "../ProfilePage";
 import RegistrationPage from "../RegistrationPage";
 import StartingPage from "../StartingPage";
+import AdminProtectedRouter from "./AdminProtectedRouter";
 import ProtectedRoutes from "./ProtectedRoutes";
 
 const PagesRouter = () => {
@@ -22,8 +23,12 @@ const PagesRouter = () => {
         <Route path="/notifications" element={<NotificationsPage />} />
         <Route path="/activities" element={<ActivitiesPage />} />
         <Route path="/adjust-program" element={<AdjustExistingProgram />} />
+      </Route>
+
+      <Route element={<AdminProtectedRouter />}>
         <Route path="/admin" element={<AdminPage />} />
       </Route>
+
       <Route path="/" element={<StartingPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/registration" element={<RegistrationPage />} />
