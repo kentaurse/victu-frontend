@@ -1,16 +1,22 @@
 import React from "react";
 import "./userExercicesCardStyle.css";
-import useFetchMoveVideos from "../hooks/useFetchMoveVideos";
 import Carousel from "../Carousel/Carousel";
+import useFetchMoveVideos from "../hooks/useFetchMoveVideos";
+import SkeletonExerciseCard from "./SkeletonExerciseCard";
 
 const UserExercisesCard = () => {
-  const moveData = useFetchMoveVideos();
+  const { data, isLoading } = useFetchMoveVideos();
+
+  if (isLoading) {
+    return <SkeletonExerciseCard />;
+  }
 
   return (
     <div className="move">
       <div className="move-title">Move</div>
-      <Carousel contentData={moveData} />
+      <Carousel contentData={data} />
     </div>
+
   );
 };
 

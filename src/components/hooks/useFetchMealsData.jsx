@@ -4,17 +4,25 @@ import { db } from "../../firebase/firebase.config";
 
 const useFetchMealsData = () => {
   const usersDataCollectionRef = collection(db, "usersMealsDataCollection");
-  const [mealsData, setMealsData] = useState();
+  const [data, setData] = useState(null);
+  const [isLoading, setisLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function getData() {
-      const snapshot = await getDocs(usersDataCollectionRef);
-      setMealsData(snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+      try {
+        const snapshot = await getDocs(usersDataCollectionRef);
+        setData(snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+
+        setisLoading(false);
+      } catch (error) {
+        setError(error);
+      }
     }
     getData();
-  }, []);
+  }, [usersDataCollectionRef]);
 
-  return mealsData;
+  return { data, isLoading, error };
 };
 
 export default useFetchMealsData;

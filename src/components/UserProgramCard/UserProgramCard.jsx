@@ -1,16 +1,25 @@
 import React from "react";
 import "./userProgramCardStyle.css";
-import useFetchUserProgram from "../hooks/useFetchUserProgram";
 import ExistingProgram from "./ExistingProgram";
 import NoProgram from "./NoProgram";
+import useFetchUserProgram from "../hooks/useFetchUserProgram";
+import SkeletonProgramCard from "./SkeletonProgramCard";
 
 const UserProgramCard = () => {
-  const userProgramData = useFetchUserProgram();
+  const { data, isLoading } = useFetchUserProgram();
+
+  if (isLoading) {
+    return <SkeletonProgramCard />;
+  }
 
   return (
-    <div>
-      {userProgramData ? <ExistingProgram dietProgram={userProgramData?.userDietProgram} /> : <NoProgram />}
-    </div>
+    <>
+      {data && !isLoading ? (
+        <ExistingProgram dietProgram={data?.userDietProgram} />
+      ) : (
+        <NoProgram />
+      )}
+    </>
   );
 };
 
