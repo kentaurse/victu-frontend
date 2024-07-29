@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import useFetchUserNotifications from "../hooks/useFetchUserNotifications";
 import NotificationListItem from "../NotificationListItem/NotificationListItem";
 import "./notifNewsListStyle.css";
