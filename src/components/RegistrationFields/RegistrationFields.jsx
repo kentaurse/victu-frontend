@@ -1,12 +1,16 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
 import { addDoc, collection } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebase/firebase.config";
 import InputFieldModule from "../InputFieldModule/InputFieldModule";
 import UserIcon from "../../assets/userIcon.svg";
 import PasswordIcon from "../../assets/passwordIcon.svg";
 import EmailIcon from "../../assets/emailIcon.svg";
+import setAuthCookies from "../helpers/setAuthCookies";
 
 const RegistrationFields = () => {
   const [registerEmail, setRegisterEmail] = useState();
@@ -14,15 +18,8 @@ const RegistrationFields = () => {
   const [registerConfirmPassword, setRegisterConfirmPassword] = useState();
   const [registerFirstName, setRegisterFirstName] = useState();
   const [registerLastName, setRegisterLastName] = useState();
-  const [isAuth, setIsAuth] = useState();
   const usersDataCollectionRef = collection(db, "usersDataCollection");
   const pageNavigation = useNavigate();
-
-  useEffect(() => {
-    const localData = JSON.parse(localStorage.getItem("userAuth")) || null;
-    setIsAuth(localData);
-    if (isAuth) pageNavigation("../home", { replace: true });
-  }, [isAuth, pageNavigation]);
 
   async function registerAccount() {
     try {
@@ -37,22 +34,19 @@ const RegistrationFields = () => {
       }
 
       onAuthStateChanged(auth, currentUser => {
-        setIsAuth(true);
-        localStorage.setItem(
-          "userAuthData",
-          JSON.stringify({ isAuth: true, uid: currentUser?.uid })
-        );
-
+        setAuthCookies({ isAuth: true, uid: currentUser.uid });
         addDoc(usersDataCollectionRef, {
           userFirstName: registerFirstName,
           userLastName: registerLastName,
           uid: currentUser?.uid,
         });
       });
+      pageNavigation("../home");
     } catch (err) {
       alert(err);
     }
   }
+
   return (
     <div>
       <div className="register-inputs">

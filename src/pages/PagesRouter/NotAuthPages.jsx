@@ -1,15 +1,15 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import StartingPage from "../StartingPage";
 
 import Cookies from "universal-cookie";
+import HomePage from "../HomePage";
 
-const ProtectedRoutes = () => {
+const NotAuthPages = () => {
   const cookies = new Cookies();
   const authCookies = cookies.get("userAuthData");
   const isAuth = authCookies?.isAuth || false;
 
-  return isAuth ? <Outlet /> : <StartingPage />;
+  return !isAuth ? <Outlet /> : <HomePage />;
 };
 
-export default ProtectedRoutes;
+export default NotAuthPages;

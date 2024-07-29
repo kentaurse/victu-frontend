@@ -1,23 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useFetchUserData from "../hooks/useFetchUserData";
+import SkeletonHomeHeader from "./SkeletonHomeHeader";
 
-const HomeHeader = ({ userName, userAvatar }) => {
+const HomeHeader = () => {
+  const { data, isLoading } = useFetchUserData();
   const [handledAvatar, setHandledAvatar] = useState();
 
   useEffect(() => {
-    const firstLetterOfName = userName?.split("")[0];
+    const firstLetterOfName = data?.userFirstName?.split("")[0];
     setHandledAvatar(firstLetterOfName?.toUpperCase());
-  }, [userName]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoading]);
+
+  if (isLoading) {
+    return <SkeletonHomeHeader />;
+  }
 
   return (
     <div className="home-header">
       <div className="home-title">
-        <div className="home-username">Hi {userName}</div>
+        <div className="home-username">Hi {data?.userFirstName}</div>
         <div className="home-subtitle">Have a productive and joyous day</div>
       </div>
-      {userAvatar ? (
+      {data?.userAvatar ? (
         <Link to="/profile">
-          <img src={userAvatar} alt="avatar" className="home-avatar" />
+          <img src={data?.userAvatar} alt="avatar" className="home-avatar" />
         </Link>
       ) : (
         <Link to="/profile" className="handledAvatar">

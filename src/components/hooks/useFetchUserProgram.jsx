@@ -1,32 +1,40 @@
 import { collection, getDocs, query, where } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { db } from "../../firebase/firebase.config";
 
+import Cookies from "universal-cookie";
+
 const useFetchUserProgram = () => {
+  const cookies = new Cookies();
+
   const usersProgramCollectionRef = collection(db, "usersProgramCollection");
-  const [userProgramData, setUserData] = useState();
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const localUserAuth =
-      JSON.parse(localStorage.getItem("userAuthData")) || null;
+    const localUserAuth = cookies.get("userAuthData");
     const uid = localUserAuth?.uid;
 
     async function getData() {
-      const queryData = query(
-        usersProgramCollectionRef,
-        where("uid", "==", uid)
-      );
+      try {
+        const queryData = query(
+          usersProgramCollectionRef,
+          where("uid", "==", uid)
+        );
 
-      const snapshot = await getDocs(queryData);
-      setUserData(...snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+        const snapshot = await getDocs(queryData);
+        setData(...snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+      } catch (error) {
+        setError(error);
+      }
     }
 
     getData();
+    setIsLoading(false);
   }, []);
 
-  localStorage.setItem("userProgramDataLocal", JSON.stringify(userProgramData));
-
-  return userProgramData || null;
+  return { data, isLoading, error };
 };
 
 export default useFetchUserProgram;
