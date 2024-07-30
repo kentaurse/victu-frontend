@@ -1,22 +1,36 @@
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { db } from "../../firebase/firebase.config";
+
+import Cookies from "universal-cookie";
 
 import Cookies from "universal-cookie";
 
 const useFetchUserProgram = () => {
   const cookies = new Cookies();
 
+  const cookies = new Cookies();
+
   const usersProgramCollectionRef = collection(db, "usersProgramCollection");
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const localUserAuth = cookies.get("userAuthData");
+    const localUserAuth = cookies.get("userAuthData");
     const uid = localUserAuth?.uid;
 
     async function getData() {
+      try {
+        const queryData = query(
+          usersProgramCollectionRef,
+          where("uid", "==", uid)
+        );
       try {
         const queryData = query(
           usersProgramCollectionRef,
@@ -34,6 +48,7 @@ const useFetchUserProgram = () => {
     setIsLoading(false);
   }, []);
 
+  return { data, isLoading, error };
   return { data, isLoading, error };
 };
 
