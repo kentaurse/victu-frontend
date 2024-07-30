@@ -5,7 +5,10 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase/firebase.config";
 import { useNavigate } from "react-router-dom";
 
+import Cookies from "universal-cookie";
+
 const CreateNewProgramFields = () => {
+  const cookies = new Cookies();
   const [userAge, setUserAge] = useState();
   const [userWeight, setUserWeight] = useState();
   const [userHeight, setUserHeight] = useState();
@@ -17,10 +20,11 @@ const CreateNewProgramFields = () => {
   const pageNavigation = useNavigate();
 
   useEffect(() => {
-    const userAuthLocal =
-      JSON.parse(localStorage.getItem("userAuthData")) || null;
+    const userAuthLocal = cookies.get("userAuthData") || null;
+
     const uid = userAuthLocal?.uid;
     setUserId(uid);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function createNewUserProgramInDB() {
@@ -41,8 +45,7 @@ const CreateNewProgramFields = () => {
           uid: userId,
         });
         alert("Program successfully created!");
-        pageNavigation('../home')
-
+        pageNavigation("../home");
       } catch (error) {
         alert(error);
       }

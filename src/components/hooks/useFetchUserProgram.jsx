@@ -25,6 +25,7 @@ const useFetchUserProgram = () => {
 
         const snapshot = await getDocs(queryData);
         setData(...snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+
         setIsLoading(false);
       } catch (error) {
         setError(error);
@@ -32,7 +33,10 @@ const useFetchUserProgram = () => {
     }
 
     getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  window.localStorage.setItem("userProgramDataLocal", JSON.stringify(data));
 
   return { data, isLoading, error };
 };
