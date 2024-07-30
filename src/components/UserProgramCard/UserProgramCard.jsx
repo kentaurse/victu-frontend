@@ -8,7 +8,7 @@ import SkeletonProgramCard from "./SkeletonProgramCard";
 const UserProgramCard = () => {
   const { data, isLoading } = useFetchUserProgram();
 
-  if (isLoading) {
+  if (isLoading ) {
     return <SkeletonProgramCard />;
   }
 

@@ -10,7 +10,7 @@ const HomeHeader = () => {
   useEffect(() => {
     const firstLetterOfName = data?.userFirstName?.split("")[0];
     setHandledAvatar(firstLetterOfName?.toUpperCase());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
 
   if (isLoading) {

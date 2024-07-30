@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./profileAvatarStyle.css";
 
 import useFetchUserData from "../hooks/useFetchUserData";
+import SkeletonProfile from "./SkeletonProfile";
 
 const ProfileAvatar = () => {
-  const { data } = useFetchUserData();
+  const { data, isLoading } = useFetchUserData();
   const [handledAvatar, setHandledAvatar] = useState();
 
   useEffect(() => {
@@ -12,8 +13,11 @@ const ProfileAvatar = () => {
     setHandledAvatar(firstLetterOfName?.toUpperCase());
   }, [data]);
 
-
   const userFullName = `${data?.userFirstName} ${data?.userLastName}`;
+
+  if (isLoading) {
+    return <SkeletonProfile />;
+  }
 
   return (
     <div className="profile-avatar">

@@ -9,8 +9,8 @@ const SkeletonProgramCard = () => (
     backgroundColor="#7276d7"
     foregroundColor="#aeb0dc"
   >
-    <rect x="0" y="0" rx="0" ry="0" width="280" height="40" />
-    <rect x="0" y="66" rx="0" ry="0" width="193" height="14" />
+    <rect x="0" y="0" rx="10" ry="10" width="280" height="40" />
+    <rect x="0" y="66" rx="5" ry="5" width="193" height="14" />
     <circle cx="330" cy="40" r="20" />
   </ContentLoader>
 );
