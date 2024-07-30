@@ -45,8 +45,9 @@ const useFetchUserProgram = () => {
     }
 
     getData();
-    setIsLoading(false);
   }, []);
+
+  window.localStorage.setItem("userProgramDataLocal", JSON.stringify(data));
 
   return { data, isLoading, error };
   return { data, isLoading, error };

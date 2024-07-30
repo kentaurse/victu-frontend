@@ -20,7 +20,8 @@ const useFetchMealsData = () => {
       }
     }
     getData();
-  }, [usersDataCollectionRef]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return { data, isLoading, error };
 };

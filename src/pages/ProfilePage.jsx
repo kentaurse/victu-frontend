@@ -8,12 +8,16 @@ import { auth } from "../firebase/firebase.config";
 import "../styles/profilePageStyle.css";
 import Logo from "../assets/profileLogo.png";
 
+import Cookies from "universal-cookie";
+
 const ProfilePage = () => {
   const pageNavigation = useNavigate();
+  const cookies = new Cookies();
 
   async function logoutAccount() {
     await signOut(auth);
-    localStorage.clear();
+    cookies.remove("userAuthData");
+    window.localStorage.clear();
     pageNavigation("../");
   }
 
