@@ -4,17 +4,25 @@ import { db } from "../../firebase/firebase.config";
 
 const useFetchMoveVideos = () => {
   const usersDataCollectionRef = collection(db, "usersMoveDataCollection");
-  const [moveData, setMoveData] = useState();
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function getData() {
-      const snapshot = await getDocs(usersDataCollectionRef);
-      setMoveData(snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+      try {
+        const snapshot = await getDocs(usersDataCollectionRef);
+        setData(snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+        setIsLoading(false);
+      } catch (error) {
+        setError(error);
+      }
     }
+
     getData();
   }, []);
 
-  return moveData;
+  return { data, isLoading, error };
 };
 
 export default useFetchMoveVideos;

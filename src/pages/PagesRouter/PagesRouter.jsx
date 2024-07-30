@@ -13,6 +13,8 @@ import StartingPage from "../StartingPage";
 import AdminProtectedRouter from "./AdminProtectedRouter";
 import ProtectedRoutes from "./ProtectedRoutes";
 
+import NotAuthPages from "./NotAuthPages";
+
 const PagesRouter = () => {
   return (
     <Routes>
@@ -30,8 +32,11 @@ const PagesRouter = () => {
       </Route>
 
       <Route path="/" element={<StartingPage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/registration" element={<RegistrationPage />} />
+
+      <Route element={<NotAuthPages />}>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/registration" element={<RegistrationPage />} />
+      </Route>
     </Routes>
   );
 };
