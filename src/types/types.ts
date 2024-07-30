@@ -24,6 +24,13 @@ export interface IExerciseData {
   videoId: string;
 }
 
+export interface INotificationData {
+  id: string;
+  notificationFullBody: string;
+  notificationShortBody: string;
+  notificationTitle: string;
+}
+
 export interface IMealData {
   id: string;
   subtitle: string;

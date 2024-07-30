@@ -1,10 +1,12 @@
+
+
 .carousel-content-video {
   margin-bottom: 4px;
 }
 
 .carousel-content-video iframe {
-  width: 210px;
-  max-height: 117.5px;
+  width: 249px;
+  max-height: 140px;
   border-radius: 15px;
 }
 
