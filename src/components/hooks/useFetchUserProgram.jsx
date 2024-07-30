@@ -25,13 +25,13 @@ const useFetchUserProgram = () => {
 
         const snapshot = await getDocs(queryData);
         setData(...snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+        setIsLoading(false);
       } catch (error) {
         setError(error);
       }
     }
 
     getData();
-    setIsLoading(false);
   }, []);
 
   return { data, isLoading, error };
