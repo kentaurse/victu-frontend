@@ -4,18 +4,19 @@ import "./profileAvatarStyle.css";
 import useFetchUserData from "../hooks/useFetchUserData";
 import SkeletonProfile from "./SkeletonProfile";
 
+import { createDefaultAvatar } from "../helpers/createDeafultAvatar";
+
 const ProfileAvatar = () => {
   const { data, isLoading } = useFetchUserData();
-  const [handledAvatar, setHandledAvatar] = useState<string>();
+  const [handledAvatar, setHandledAvatar] = useState("");
+  const userFullName = `${data?.userFirstName} ${data?.userLastName}`;
 
   useEffect(() => {
     if (data) {
-      const firstLetterOfName = data!.userFirstName.split("")[0];
-      setHandledAvatar(firstLetterOfName!.toUpperCase());
+      const avatar = createDefaultAvatar(data.userFirstName);
+      setHandledAvatar(avatar);
     }
   }, [data]);
-
-  const userFullName = `${data?.userFirstName} ${data?.userLastName}`;
 
   if (isLoading) {
     return <SkeletonProfile />;
@@ -28,7 +29,7 @@ const ProfileAvatar = () => {
           <img src={data?.userAvatar} alt="user avatar" />
         </div>
       ) : (
-        <div className="profile-avatar-handled">{handledAvatar || ""}</div>
+        <div className="profile-avatar-handled">{handledAvatar}</div>
       )}
       <div className="profile-avatar-name">{userFullName}</div>
     </div>

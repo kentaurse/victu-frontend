@@ -35,7 +35,7 @@ const Carousel: FC<CarouselProps> = ({ contentData }) => {
         className="carousel-inner"
       >
         {contentData?.map(content => (
-          <CarouselItem key={content.id} content={content} />
+          <CarouselItem key={content.id} content={content}  />
         ))}
       </motion.div>
     </motion.div>

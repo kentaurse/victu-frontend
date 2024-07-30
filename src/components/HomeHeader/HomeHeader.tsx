@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 import useFetchUserData from "../hooks/useFetchUserData";
 import SkeletonHomeHeader from "./SkeletonHomeHeader";
 
-const HomeHeader:FC = () => {
+import { createDefaultAvatar } from "../helpers/createDeafultAvatar";
+
+const HomeHeader: FC = () => {
   const { data, isLoading } = useFetchUserData();
-  const [handledAvatar, setHandledAvatar] = useState<string>();
+  const [handledAvatar, setHandledAvatar] = useState("");
 
   useEffect(() => {
     if (data) {
-      const firstLetterOfName = data.userFirstName.split("")[0];
-      setHandledAvatar(firstLetterOfName.toUpperCase());
+      const avatar = createDefaultAvatar(data.userFirstName);
+      setHandledAvatar(avatar);
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoading]);
+  }, [data]);
 
   if (isLoading) {
     return <SkeletonHomeHeader />;
@@ -32,7 +32,7 @@ const HomeHeader:FC = () => {
         </Link>
       ) : (
         <Link to="/profile" className="handledAvatar">
-          {handledAvatar || ""}
+          {handledAvatar}
         </Link>
       )}
     </div>
