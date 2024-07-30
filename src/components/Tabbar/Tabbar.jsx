@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./tabbar.css";
 import HomeIcon from "../../assets/tabHomeIcon.svg";
 import ActivitiesIcon from "../../assets/tabActivitiesIcon.svg";
 import NotifIcon from "../../assets/tabNotificationIcon.svg";
 import ProfileIcon from "../../assets/tabProfileIcon.svg";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Tabbar = ({ currentPage }) => {
   return (
